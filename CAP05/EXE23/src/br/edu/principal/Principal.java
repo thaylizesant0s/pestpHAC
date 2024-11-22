@@ -12,13 +12,12 @@ public class Principal {
 	    System.out.print("Digite o valor do salário mínimo: ");
         sal = sc.nextDouble();
         
+        System.out.print("Digite a quantidade de quilowatts consumidos (ou 0 para encerrar): ");
+        qtd = sc.nextInt();
+        
         valor_kw = sal / 8;
 
-        while (true) {
-            System.out.print("Digite a quantidade de quilowatts consumidos (ou 0 para encerrar): ");
-            qtd = sc.nextInt();
-            
-            if (qtd == 0) break;
+        while (qtd != 0) {
     
             gasto = qtd * valor_kw;
 
@@ -39,12 +38,15 @@ public class Principal {
             tot_geral = tot_geral + total;
 
             if (total >= 500 && total <= 1000) {
-                qtd_cons = qtd_cons +1;
+                qtd_cons = qtd_cons + 1;
             }
     
             System.out.println("Gasto: R$ " + gasto);
             System.out.println("Acréscimo: R$ " + acresc);
             System.out.println("Total a pagar: R$ " + total);
+            
+            System.out.print("Digite a quantidade de quilowatts consumidos (ou 0 para encerrar): ");
+            qtd = sc.nextInt();
         }
     
         System.out.println("Faturamento geral: R$ " + tot_geral);
